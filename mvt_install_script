@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#added below line because of Kali Linux error
+sudo apt-get update
+
+#get neccessary packages
+sudo apt-get install python3 python3-pip libusb-1.0-0 git
+
+#added below line because of error with Python module packaging
+pip3 install packaging
+
+#make a separate directory for MVT inside home
+mkdir mvt
+cd mvt
+
+#grab Github repo
+git clone https://github.com/mvt-project/mvt.git
+cd mvt
+
+#install
+pip3 install .
+
+#move to location for mvt
+cd ~/.local/bin
+
+#show that mvt is installed
+ls
